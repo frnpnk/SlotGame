@@ -1,5 +1,15 @@
 # Slot Game
 
+#### Run
+
+```
+git clone https://github.com/frnpnk/SlotGame
+cd SlotGame
+npm install
+npm run start
+
+```
+
 Using typescript and pixijs rendering engine (http://www.pixijs.com/) you need to create prototype of slot game with loading screen.
 
 1. Scene: Simple slot machine gameplay prototype
