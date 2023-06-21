@@ -31,7 +31,6 @@ export class WinCounter extends Container {
         if (this.children[1]) {
             this.removeChildAt(1);
         }
-
         const text = new Text(`Win: \n USD ${winAmount}`, {
             fontFamily: "Arial",
             fontSize: 24,

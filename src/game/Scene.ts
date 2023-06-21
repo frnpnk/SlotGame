@@ -21,7 +21,8 @@ export class Scene extends Container {
         const brSize = backReels.backReelSize;// getter for backReelSize to responsive sizing
         const GameRun = new Game(this.screenWidth, this.screenHeight, brSize);
         const counter = new WinCounter(this.screenWidth, this.screenHeight, brSize);
-        GameRun.FirstReels(); // set First Reels
+        GameRun.InitialReels(); // set First Reels
+        
 
         this.addChild(back);
         this.addChild(backReels);

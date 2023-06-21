@@ -1,7 +1,7 @@
 import { Container, Graphics } from "pixi.js";
 import { Reel } from "./Reel";
 
-export class Reels extends Container {
+export class ReelManager extends Container {
     private brWidth: number;
     private brHeight: number;
     private readonly screenWidth: number;
@@ -35,8 +35,8 @@ export class Reels extends Container {
         this.addChild(mask);
     }
 
-    //create first reels
-    public createFirstReels(): void {
+   
+    public createInitialReels(): void {
         const mockArr = ["H1", "H1", "H1"];
         const mockSymbolsQuantity = 7;
 

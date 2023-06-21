@@ -43,6 +43,7 @@ export class Reel extends Container {
         );
 
         const texturePlay = this.playArray.map((Sym) => Texture.from(`${Sym}`));
+        //Adding padding to the reel, to scale the Symbols easier.
         for (let i = 0; i < this.reelCount; i++) {
             const paddingGraphic = new Graphics();
             paddingGraphic.blendMode = BLEND_MODES.ADD;
@@ -73,7 +74,7 @@ export class Reel extends Container {
     //Spin animation
     spinReel(delay: number): void {
         gsap.to(this, {
-            y: -(this.SYMBOL_SIZE * ( this.reelCount - this.winArr.length - 1)),
+            y: -(this.SYMBOL_SIZE * (this.reelCount - this.winArr.length - 1)),
             duration: delay,
             repeat: 0,
             ease: "back.out(0.7)", // Bounce-back effect (to simulate reel inertia )

@@ -3,8 +3,8 @@ import { Container, Sprite } from "pixi.js";
 export class BackReels extends Container {
     private readonly screenWidth: number;
     private readonly screenHeight: number;
-
     private backReel: Sprite;
+    
     constructor(screenWidth: number, screenHeight: number) {
         super();
         this.screenWidth = screenWidth;
@@ -12,6 +12,7 @@ export class BackReels extends Container {
         this.backReel = Sprite.from("reels");
         this.backReelPosition();
     }
+
     backReelPosition(): void {
         let x = this.screenWidth / this.backReel.width;
 
