@@ -29,7 +29,8 @@ export class WinCounter extends Container {
 
     WriteWinText(winAmount: number) {
         if (this.children[1]) {
-            this.removeChildAt(1);
+           // this.removeChildAt(1);
+            this.removeChildren(1)
         }
         const text = new Text(`Win: \n USD ${winAmount}`, {
             fontFamily: "Arial",
@@ -40,7 +41,8 @@ export class WinCounter extends Container {
         text.anchor.set(0.5);
         text.x = this.WinBackground.x;
         text.y = this.WinBackground.y;
-
+        console.log(this.children);
+        
         setTimeout(() => {  
             this.addChild(text);
         }, 3000);

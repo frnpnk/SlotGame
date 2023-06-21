@@ -34,6 +34,6 @@ export class SpinButton extends Container {
         }
         this.SpinBtn.scale.set(scale);
         this.addChild(this.SpinBtn);
-        this.SpinBtn.interactive = true;
+        
     }
 }

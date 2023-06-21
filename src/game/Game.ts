@@ -40,6 +40,7 @@ export class Game extends Container {
             this.brSize
         );
         this.SpinBtn.on("click", this.RunPlay, this);
+        this.SpinBtn.interactive=true;
     }
 
     InitialReels() {
@@ -74,5 +75,10 @@ export class Game extends Container {
         if (this.playCounter == this.playArray.length) {
             this.playCounter = 0;
         }
+        // this SetTimeout is to avoid that the user click the button while the reels spins.
+        this.SpinBtn.interactive= false;
+        setTimeout(() => {
+            this.SpinBtn.interactive= true;
+        }, 3000)
     }
 }
