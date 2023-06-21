@@ -1,8 +1,4 @@
-# 2d infinite runner html5 game
-
-Tutorial: https://gamedev.land/runner/
-
-Preview demo: https://gamedevland.github.io/runner/
+# Slot Game
 
 Using typescript and pixijs rendering engine (http://www.pixijs.com/) you need to create prototype of slot game with loading screen.
 
@@ -32,4 +28,3 @@ Win amount: 0
 Win amount should be shown in win counter on the screen (in according to mockup provided) after win event.
 Win amount should be reset to 0 after spin button click.
 
-Accomplished assignment source code zipped expected on email: jobs@foxium.com for a review. Please add your comments to a code. We will contact you for results.
