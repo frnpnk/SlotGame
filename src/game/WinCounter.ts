@@ -3,25 +3,26 @@ import { Container, Sprite, Text } from "pixi.js";
 export class WinCounter extends Container {
     private readonly screenWidth: number;
     private readonly screenHeight: number;
-    private readonly brSize: number[];
-    WinBackground: Sprite;
+    private readonly brWidth: number;
+    private readonly brHeigth: number;
+    private WinBackground: Sprite;
 
     constructor(screenWidth: number, screenHeight: number, brSize: number[]) {
         super();
-
         this.screenWidth = screenWidth;
         this.screenHeight = screenHeight;
         this.WinBackground = Sprite.from("counter");
-        this.brSize = brSize;
+        this.brWidth = brSize[0];
+        this.brHeigth = brSize[1];
     }
 
     counterPosition() {
-        let scale = this.brSize[0] / 3 / this.WinBackground.width;
+        let scale =  this.brWidth / 3 / this.WinBackground.width; //set scale of Counter to 1/3 of the reels background width
         this.WinBackground.anchor.set(0.5);
         this.WinBackground.x = (this.screenWidth - this.width) / 2;
         this.WinBackground.y =
-            this.screenHeight / 2 + this.brSize[1] / 2 + this.brSize[0] / 12;
-        this.WinBackground.scale.set(scale, scale);
+            this.screenHeight / 2 + this.brHeigth / 2 +  this.brWidth / 12;
+        this.WinBackground.scale.set(scale);
         this.addChild(this.WinBackground);
         this.WinBackground.interactive = true;
     }
@@ -41,9 +42,7 @@ export class WinCounter extends Container {
         text.x = this.WinBackground.x;
         text.y = this.WinBackground.y;
 
-        console.log(this.WinBackground.x);
-        console.log("Y", this.WinBackground.y);
-        setTimeout(() => {
+        setTimeout(() => {  
             this.addChild(text);
         }, 3000);
     }

@@ -2,25 +2,27 @@ import { Container, Graphics } from "pixi.js";
 import { Reel } from "./Reel";
 
 export class Reels extends Container {
-    brWidth: number;
-    brHeight: number;
+    private brWidth: number;
+    private brHeight: number;
     private readonly screenWidth: number;
     private readonly screenHeight: number;
-    reelsCount = 3;
-    timeBetween = 0;
+    private symbolsQuantity = 20;
+    private reelsCount = 3;
+    private timeBetween = 0;
 
     constructor(screenWidth: number, screenHeight: number, brSize: number[]) {
-        super(); // Mandatory! This calls the superclass constructor.
+        super();
         this.screenWidth = screenWidth;
         this.screenHeight = screenHeight;
         this.brWidth = brSize[0];
         this.brHeight = brSize[1];
     }
+
     public createReels(ARR: Array<Array<string>>): void {
         this.timeBetween = 1;
 
         for (let i = 0; i < this.reelsCount; i++) {
-            const reelN = new Reel(20, ARR[i], this.brWidth);
+            const reelN = new Reel(this.symbolsQuantity, ARR[i], this.brWidth);
             reelN.x = i * (this.brWidth / 3.1);
             this.addChild(reelN);
             reelN.spinReel((i + 1) * this.timeBetween);
@@ -33,11 +35,13 @@ export class Reels extends Container {
         this.addChild(mask);
     }
 
+    //create first reels
     public createFirstReels(): void {
         const mockArr = ["H1", "H1", "H1"];
+        const mockSymbolsQuantity = 7;
 
         for (let i = 0; i < this.reelsCount; i++) {
-            const reelN = new Reel(20, mockArr, this.brWidth);
+            const reelN = new Reel(mockSymbolsQuantity, mockArr, this.brWidth);
             reelN.x = i * (this.brWidth / 3.1);
             this.addChild(reelN);
         }

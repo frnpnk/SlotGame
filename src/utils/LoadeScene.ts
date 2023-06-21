@@ -1,6 +1,6 @@
 import { Container, Graphics, Assets } from "pixi.js";
 import { manifest } from "../game/manifest";
-import { Game } from "../game/Game";
+import { Scene } from "../game/Scene";
 
 export class LoaderScene extends Container {
     private loaderBar: Container;
@@ -8,6 +8,8 @@ export class LoaderScene extends Container {
     private loaderBarFill: Graphics;
     private readonly screenWidth: number;
     private readonly screenHeight: number;
+
+
     constructor(screenWidth: number, screenHeight: number) {
         super();
         this.screenWidth = screenWidth;
@@ -42,9 +44,10 @@ export class LoaderScene extends Container {
         this.loaderBarFill.scale.x = progressRatio;
     }
 
+    // Calling the constructor of the Game class
     private gameLoaded(): void {
         this.removeChild(this.loaderBar);
-        const gameInstance = new Game(this.screenWidth, this.screenHeight);
+        const gameInstance = new Scene(this.screenWidth, this.screenHeight);
         this.addChild(gameInstance);
     }
 }
