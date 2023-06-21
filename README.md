@@ -1,4 +1,8 @@
-# SlotGame
+# 2d infinite runner html5 game
+
+Tutorial: https://gamedev.land/runner/
+
+Preview demo: https://gamedevland.github.io/runner/
 
 Using typescript and pixijs rendering engine (http://www.pixijs.com/) you need to create prototype of slot game with loading screen.
 
