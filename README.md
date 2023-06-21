@@ -6,6 +6,7 @@
 git clone https://github.com/frnpnk/SlotGame
 cd SlotGame
 ```
+```
 npm install
 ```
 ```
